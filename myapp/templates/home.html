@@ -1,0 +1,55 @@
+{% extends 'userbash.html' %}
+{% load static %}
+{% block content %}
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<style>
+    .home-content .sales-boxes .recent-sales {
+        width: 100%;
+        background: #fff;
+        padding: 20px 30px;
+        margin: 0 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Dashbord</span>
+        </div>
+
+        <div class="profile-details">
+            <i class="fa fa-user" aria-hidden="true" style="margin-left:40px;"></i>
+            <form action="{% url 'logout' %}" method="post" id="my_form">
+                {% csrf_token %}
+                <button type="submit"></button>
+                <a href="javascript:{}" onclick="document.getElementById('my_form').submit();"
+                    style="margin-left:10px; text-decoration:none;"> Logout </a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="title">Welcome {{users.username}}</div>
+                <div class="sales-details">
+                    <form method="post" style="width: 100%;">
+                        <div class="table-responsive">
+                            <hr>
+                            <h3>Check your Notifications here..</h3>
+
+                            <a href="{% url 'demo' %}"><input class="btn btn-primary"
+                                        type="btn" value="Notification"
+                                        style="border:2px solid black;margin:0 0 0 10px;padding:8px 0px"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
