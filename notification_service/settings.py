@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-icv3mio=hoi-z85ea^v9o^(=p-xsf807eh@-c!89m4d^x+vo42
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.29.138', '127.0.0.1','192.168.0.20']
+ALLOWED_HOSTS = ['192.168.29.138', '127.0.0.1']
 
 
 # Application definition
@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'notificationdb',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
