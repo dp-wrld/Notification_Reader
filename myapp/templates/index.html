@@ -55,10 +55,8 @@
                                 <select name="androidid" id="androidid"
                                     style="margin:0 0 10px 10px;padding:8px; width:180px">
                                     <option value="NULL">Search by Android Id</option>
-                                    {% for i in users %}
-                                    <option>{{i.androidid}}</option>
-                                    <option>{{i.androidid1}}</option>
-                                    <option>{{i.androidid2}}</option>
+                                    {% for i in ids %}
+                                    <option>{{i}}</option>
                                     {% endfor %}
                                 </select>
                                 <input class="btn btn-primary" type="submit"

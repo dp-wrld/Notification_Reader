@@ -1,4 +1,3 @@
-import email
 from django.db import models
 
 
@@ -40,9 +39,9 @@ class Device(models.Model):
 
 
 class RegistrationDetais(models.Model):
-    androidid = models.CharField(max_length=40, blank=True, null=True)
-    androidid1 = models.CharField(max_length=40, blank=True, null=True)
-    androidid2 = models.CharField(max_length=40, blank=True, null=True)
+    androidid = models.CharField(max_length=300, blank=True, null=True)
+    # androidid1 = models.CharField(max_length=40, blank=True, null=True)
+    # androidid2 = models.CharField(max_length=40, blank=True, null=True)
     username = models.CharField(max_length=30, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)

@@ -75,8 +75,7 @@
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Android id</th>
-                                    <th scope="col">Android id 1</th>
-                                    <th scope="col">Android id 2</th>
+                                    <th scope="col">Add New Android id</th>
                                 </thead>
                                 <tbody>
                                     {% for r in users %}
@@ -88,26 +87,15 @@
                                         {% if r.androidid %}
                                         <td>{{r.androidid}}</td>
                                         {% else %}
+                                        <td></td>
+                                        {% endif %}
+
+
                                         <td align="center"><span><a href="/addAndriodId/{{r.phone}}"
-                                                    class="btn btn-primary">Add
+                                                    class="btn btn-primary">Add New
                                                     Android id</a></span></td>
-                                        {% endif %}
 
-                                        {% if r.androidid1 %}
-                                        <td>{{r.androidid1}}</td>
-                                        {% else %}
-                                        <td align="center"><span><a href="/addAndriodId1/{{r.phone}}"
-                                                    class="btn btn-primary">Add
-                                                    Android id 1</a></span></td>
-                                        {% endif %}
 
-                                        {% if r.androidid2 %}
-                                        <td>{{r.androidid2}}</td>
-                                        {% else %}
-                                        <td align="center"><span><a href="/addAndriodId2/{{r.phone}}"
-                                                    class="btn btn-primary">Add
-                                                    Android id 2</a></span></td>
-                                        {% endif %}
 
                                     </tr>
                                     {% endfor %}

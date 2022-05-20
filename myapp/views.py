@@ -27,7 +27,14 @@ def index(request):
         else:
             notification = Notification.objects.order_by('-id')
             users = RegistrationDetais.objects.all()
-            return render(request, 'index.html', {"notification": notification, 'users': users})
+            androidlist = ''
+            for i in users:
+                androidlist += i.androidid + ', '
+
+            idList = androidlist.split(", ")
+            ids = {i:i for i in idList}
+            
+            return render(request, 'index.html', {"notification": notification, 'ids': ids})
     else:
         return render(request, 'login.html')
 
@@ -106,24 +113,23 @@ def login(request):
 
 
 def registration(request):
-    if 'androidid' and 'phone' in request.session:
-        if request.method == 'POST':
-            username = request.POST['username']
-            email = request.POST['email']
-            number = request.POST['number']
-            password = request.POST['password']
-            repassword = request.POST['repassword']
-            date = datetime.now()
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        number = request.POST['number']
+        password = request.POST['password']
+        repassword = request.POST['repassword']
+        date = datetime.now()
 
-            if password == repassword:
-                RegistrationDetais.objects.create(
-                    username=username, email=email, phone=number, password=password, date=date)
-                Device.objects.create(phone=number)
-                return redirect('login')
+        if password == repassword:
+            RegistrationDetais.objects.create(
+                username=username, email=email, phone=number, password=password, date=date)
+            Device.objects.create(phone=number)
+            return redirect('login')
 
-        return render(request, 'registration.html')
-    else:
-        return render(request,'login.html')
+    return render(request, 'registration.html')
+    
 
 def logout(request):
     if 'phone' in request.session:
@@ -137,30 +143,29 @@ def adddevice(request):
     if request.method == 'POST':
         dname = request.POST['devicename']
         androidid = request.POST['androidid']
-        androidid1 = request.POST['androidid']
-        androidid2 = request.POST['androidid']
+        # androidid1 = request.POST['androidid']
+        # androidid2 = request.POST['androidid']
         phone = request.POST['phone']
 
         alldevice = Device.objects.filter(androidid=androidid)
-        alldevice1 = Device.objects.filter(androidid1=androidid1)
-        alldevice2 = Device.objects.filter(androidid2=androidid2)
+        # alldevice1 = Device.objects.filter(androidid1=androidid1)
+        # alldevice2 = Device.objects.filter(androidid2=androidid2)
 
-        if alldevice or alldevice1 or alldevice2:
-            message = "duplicate andriod id"
-            return render(request, 'adddevice.html', {'message': message})
-        elif alldevice != '':
-            Device.objects.create(
-                dname=dname, androidid=androidid, phone=phone)
-            return redirect('device')
-        elif alldevice1 != '':
-            Device.objects.create(
-                dname=dname, androidid1=androidid1, phone=phone)
-            return redirect('device')
-        elif alldevice2 != '':
-            Device.objects.create(
-                dname=dname, androidid2=androidid2, phone=phone)
-            return redirect('device')
-
+        # if alldevice or alldevice1 or alldevice2:
+        #     message = "duplicate andriod id"
+        #     return render(request, 'adddevice.html', {'message': message})
+        # elif alldevice != '':
+        #     Device.objects.create(
+        #         dname=dname, androidid=androidid, phone=phone)
+        #     return redirect('device')
+        # elif alldevice1 != '':
+        #     Device.objects.create(
+        #         dname=dname, androidid1=androidid1, phone=phone)
+        #     return redirect('device')
+        # elif alldevice2 != '':
+        #     Device.objects.create(
+        #         dname=dname, androidid2=androidid2, phone=phone)
+        #     return redirect('device')
 
     return render(request, 'adddevice.html')
 
@@ -183,11 +188,18 @@ def adddata(request):
         msg = request.POST['msg']
         ntime = datetime.now()
         ntime.strftime("%X")
+        
+        # androidlist = androidlist.androidid
+        # idList = androidlist.split(", ")
+        try:
+            users = RegistrationDetais.objects.get(androidid=androidid)
+            users.ncount += 1
+            users.save()
+            
+        except:
+            print("Android id is not Register by Admin")
 
-        users = RegistrationDetais.objects.get(androidid=androidid)
-        users.ncount += 1
-        users.save()
-        print("incoming data")
+        print("incoming data from",androidid)
         Notification.objects.create(
              RegDate=date, androidid=androidid, package=package, title=title, msg=msg, ntime=ntime)
 
@@ -198,10 +210,15 @@ def addAndriodId(request, phone):
 
     if 'androidid' and 'phone' in request.session:
         andriodUser = RegistrationDetais.objects.get(phone=phone)
+        print(".........",andriodUser.androidid)
         if request.method == 'POST':
             andriodid = request.POST['androidid']
-
-            andriodUser.androidid = andriodid
+            
+            if andriodUser.androidid == None:
+                andriodUser.androidid = andriodid
+            else:
+                andriodUser.androidid +=", "+ andriodid
+            
             andriodUser.save()
 
             return redirect('adminUserList')
@@ -211,36 +228,20 @@ def addAndriodId(request, phone):
         return render(request,'login.html')
 
 
-def addAndriodId1(request, phone):
-    if 'androidid' and 'phone' in request.session:
-        andriodUser = RegistrationDetais.objects.get(phone=phone)
-        if request.method == 'POST':
-            andriodid = request.POST['androidid1']
+# def addAndriodId1(request, phone):
+#     if 'androidid' and 'phone' in request.session:
+#         andriodUser = RegistrationDetais.objects.filter(phone=phone)
+#         if request.method == 'POST':
+#             andriodid = request.POST['androidid1']
 
-            andriodUser.androidid1 = andriodid
-            andriodUser.save()
+#             andriodUser.androidid1 = andriodid
+#             andriodUser.save()
 
-            return redirect('adminUserList')
+#             return redirect('adminUserList')
 
-        return render(request, 'adddevice1.html', {'andriodUser': andriodUser})
-    else:
-        return render(request, 'login.html')
-
-
-def addAndriodId2(request, phone):
-    if 'androidid' and 'phone' in request.session:
-        andriodUser = RegistrationDetais.objects.get(phone=phone)
-        if request.method == 'POST':
-            andriodid = request.POST['androidid2']
-
-            andriodUser.androidid2 = andriodid
-            andriodUser.save()
-
-            return redirect('adminUserList')
-
-        return render(request, 'adddevice2.html', {'andriodUser': andriodUser})
-    else:
-        return render(request, 'login.html')
+#         return render(request, 'adddevice1.html', {'andriodUser': andriodUser})
+#     else:
+#         return render(request, 'login.html')
 
 
 def home(request):
@@ -317,12 +318,17 @@ def all_delete_notification(request):
     else:
         return render(request, 'login.html')
 
-from django.db.models import Q
+# from django.db.models import Q
 def demo(request):
-    if 'androidid' and 'phone' in request.session:
+    if 'androidid' and'phone' in request.session:
         androidid = request.session['androidid']
-        # phone = request.session['phone']
-        notif = Notification.objects.filter(androidid=androidid)
+        
+        phone = request.session['phone']
+        androidlist = RegistrationDetais.objects.get(phone = phone)
+        androidlist = androidlist.androidid
+        idList = androidlist.split(", ")
+                
+        notif = Notification.objects.filter(androidid__in=idList)
         if request.method == 'POST':
             dateOn = request.POST['from_date']
             to_date = request.POST['to_date']
@@ -341,10 +347,10 @@ def demo(request):
                                                  'to_date': to_date, 'androidid': androidid})
 
         else:
-            notif = notif.order_by('-id')
-            ids = RegistrationDetais.objects.all()
-            ids = ids.filter(androidid=androidid)
-            print(ids)
+            notif = Notification.objects.filter(androidid__in=idList).order_by('-id')
+            ids = {i:i for i in idList}
+            # ids = ids.filter(androidid=androidid)
+            # print(ids)
 
         return render(request, 'demo.html', {'notif': notif,'ids':ids})
     else:

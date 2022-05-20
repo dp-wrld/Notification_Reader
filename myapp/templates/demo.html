@@ -69,15 +69,13 @@
                                     style="margin:0 0 10px 10px;padding:8px; width:180px">
                                     <option value="NULL">Search by Android Id</option>
                                     {% for i in ids %}
-                                    <option>{{i.androidid}}</option>
-                                    <option>{{i.androidid1}}</option>
-                                    <option>{{i.androidid2}}</option>
+                                    <option>{{i}}</option>
                                     {% endfor %}
                                 </select>
                                 <input class="btn btn-primary" type="submit"
                                     style="border:2px solid black;margin:0 0 0 10px;padding:8px 25px">
-                                <a href="{% url 'demo' %}"><input class="btn btn-primary" id="clear_btn"
-                                        type="btn" value="clear"
+                                <a href="{% url 'demo' %}"><input class="btn btn-primary" id="clear_btn" type="btn"
+                                        value="clear"
                                         style="border:2px solid black;margin:0 0 0 10px;padding:8px 0px"></a>
                                 <hr>
                                 <thead>
@@ -178,4 +176,3 @@
 
 
 {% endblock %}
-
