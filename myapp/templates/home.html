@@ -37,15 +37,27 @@
                 <div class="title">Welcome {{users.username}}</div>
                 <div class="sales-details">
                     <form method="post" style="width: 100%;">
+                        {% csrf_token %}
                         <div class="table-responsive">
                             <hr>
-                            <h3>Check your Notifications here..</h3>
+                            {% for x in usersId %}
+                            <h4>{{x}}</h4>
+                            {% endfor %}
+                            <hr>
+                            <h4>Add Your Android id Here..</h4>
 
-                            <a href="{% url 'demo' %}"><input class="btn btn-primary"
-                                        type="btn" value="Notification"
-                                        style="border:2px solid black;margin:0 0 0 10px;padding:8px 0px"></a>
+                            <input name="androidid" type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Android Id" />
+                            <br>
+                            <button type="submit" class="btn btn-primary">Add</button>
+
                         </div>
+                        <hr>
+                        <a href="{% url 'demo' %}"><input class="btn btn-primary"
+                                        type="btn" value="Back to Notification"
+                                        style="border:2px solid black;margin:0 0 0 10px;padding:8px 0px"></a>
                     </form>
+
                 </div>
             </div>
         </div>

@@ -119,15 +119,15 @@ def registration(request):
         username = request.POST['username']
         email = request.POST['email']
         number = request.POST['number']
-        androidid = request.POST['androidid']
+        # androidid = request.POST['androidid']
         password = request.POST['password']
         repassword = request.POST['repassword']
         date = datetime.now()
 
         if password == repassword:
             RegistrationDetais.objects.create(
-                username=username, email=email, phone=number, password=password, date=date, androidid=androidid)
-            Device.objects.create(phone=number,androidid=androidid)
+                username=username, email=email, phone=number, password=password, date=date)
+            # Device.objects.create(phone=number,androidid=androidid)
             return redirect('login')
 
     return render(request, 'registration.html')
@@ -243,10 +243,18 @@ def dashbord(request):
         return render(request,'login.html')
 
 def userdashbord(request):
-    if 'androidid' and 'phone' in request.session:
-        androidid = request.session['androidid']
-        users = RegistrationDetais.objects.get(androidid=androidid)
-        return render(request, 'home.html', {'users': users})
+    if 'phone' in request.session:
+        phone = request.session['phone']
+        print("-----",phone)
+        users = RegistrationDetais.objects.get(phone=phone)
+        users_ids = Device.objects.values_list('androidid', flat=True).filter(phone=phone)
+        usersId = {i: i for i in users_ids}
+        print(usersId)
+        if request.method == 'POST':
+            userAndroidId = request.POST['androidid']
+            Device.objects.create(phone=phone, androidid=userAndroidId)
+            print(userAndroidId)
+        return render(request, 'home.html',{'usersId':usersId,'users':users})
     else:
         return render(request,'login.html')
 
