@@ -59,6 +59,13 @@
                                     <option>{{i}}</option>
                                     {% endfor %}
                                 </select>
+                                <select name="package" id="package"
+                                    style="margin:0 0 10px 10px;padding:8px; width:180px">
+                                    <option value="NULL">Search by Package</option>
+                                    {% for i in pack %}
+                                    <option>{{i}}</option>
+                                    {% endfor %}
+                                </select>
                                 <input class="btn btn-primary" type="submit"
                                     style="border:2px solid black;margin:0 0 0 10px;padding:8px 25px">
                                 <a href="{% url 'index' %}"><input class="btn btn-primary" id="clear_btn" type="btn"

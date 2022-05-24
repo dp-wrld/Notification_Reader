@@ -25,23 +25,17 @@ class Login(models.Model):
 
 
 class Device(models.Model):
-    dname = models.CharField(max_length=30, blank=True, null=True)
-    androidid = models.CharField(
-        max_length=40, blank=True, null=True, unique=True)
-    androidid1 = models.CharField(
-        max_length=40, blank=True, null=True, unique=True)
-    androidid2 = models.CharField(
-        max_length=40, blank=True, null=True, unique=True)
+    # id = models.IntegerField(primary_key=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
+    androidid = models.CharField(max_length=40, blank=True, unique=True)
+
 
     def __str__(self) -> str:
-        return self.dname
+        return self.androidid
 
 
 class RegistrationDetais(models.Model):
-    androidid = models.CharField(max_length=300, blank=True, null=True)
-    # androidid1 = models.CharField(max_length=40, blank=True, null=True)
-    # androidid2 = models.CharField(max_length=40, blank=True, null=True)
+    androidid = models.CharField(max_length=40, blank=True, null=True)
     username = models.CharField(max_length=30, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)

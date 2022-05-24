@@ -56,11 +56,11 @@
                                     value="{{ to_date }}" {% endif %}>
 
 
-                                <select name="androidid" id="androidid"
+                                <select name="phone" id="phone"
                                     style="margin:0 0 10px 10px;padding:8px; width:180px">
-                                    <option value="NULL">Search by Android Id</option>
+                                    <option value="NULL">Search by Phone Number</option>
                                     {% for i in users %}
-                                    <option>{{i.androidid}}</option>
+                                    <option>{{i.phone}}</option>
                                     {% endfor %}
                                 </select>
                                 <input class="btn btn-primary" type="submit"
@@ -74,8 +74,7 @@
                                     <th scope="col">User Name</th>
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Phone Number</th>
-                                    <th scope="col">Android id</th>
-                                    <th scope="col">Add New Android id</th>
+                                    <th scope="col">Details</th>
                                 </thead>
                                 <tbody>
                                     {% for r in users %}
@@ -84,16 +83,9 @@
                                         <td>{{r.username}}</td>
                                         <td>{{r.email}}</td>
                                         <td>{{r.phone}}</td>
-                                        {% if r.androidid %}
-                                        <td>{{r.androidid}}</td>
-                                        {% else %}
-                                        <td></td>
-                                        {% endif %}
-
 
                                         <td align="center"><span><a href="/addAndriodId/{{r.phone}}"
-                                                    class="btn btn-primary">Add New
-                                                    Android id</a></span></td>
+                                                    class="btn btn-primary">View Android ids</a></span></td>
 
 
 

@@ -43,22 +43,23 @@
                 <div class="title">Register Android Id </div>
                 <hr>
                 <div class="sales-details">
-                    <form method="POST" class="post-form" action="{% url 'addAndriodId' andriodUser.phone  %}">
+
+                    <form method="POST" class="post-form" action="{% url 'addAndriodId' andriodUser.phone %}">
+                        {% for i in userDetails%}
+                            <h4>{{i}}</h4>
+                        {% endfor %}
+
                         {% csrf_token %}
                         <div class="container">
                             {% if message %}
                             <h3 align="center" style="border: 1px solid black;">Android Id Already Exists</h3>
                             {% endif %}
                             <br>
-
                             <div class="form-group row">
-
-
                                 <div class="form-group">
                                     <label for="text">Android Id</label>
                                     <input name="androidid" type="text" class="form-control" id="exampleInputPassword"
                                         required />
-
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Add Device</button>

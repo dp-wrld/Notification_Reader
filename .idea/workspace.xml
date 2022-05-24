@@ -2,37 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac8a512-1793-4c14-be15-16c97f94619f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/notification_service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0002_adddata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0003_device_delete_adddata_alter_notification_androidid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0004_alter_device_androidid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0005_registration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0006_registration_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0007_rename_registration_registrationdetais.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0008_registrationdetais_androidid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0009_remove_registrationdetais_androidid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0010_registrationdetais_androidid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0011_notification_ntime_registrationdetais_ntime.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0012_alter_notification_regdate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0013_alter_notification_regdate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0014_alter_notification_regdate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0015_notification_recivedate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0016_alter_notification_regdate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0017_registrationdetais_ncount.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0018_registrationdetais_androidid1_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0019_device_androidid1_device_androidid2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0020_remove_registrationdetais_androidid1_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0021_remove_device_androidid1_remove_device_androidid2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0022_registrationdetais_androidid1_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0023_device_androidid1_device_androidid2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification_service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification_service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/migrations/0002_remove_registrationdetais_device_device_phone_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/migrations/0003_alter_device_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/migrations/0002_remove_registrationdetais_androidid1_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/migrations/0003_alter_registrationdetais_androidid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/migrations/0004_delete_device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/migrations/0005_device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/adddata.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adddata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/adddevice.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adddevice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/adddevice2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/adminUserList.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adminUserList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/adminlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adminlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/searchnotification.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/searchnotification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/searchuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/searchuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification_service/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,31 +50,52 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/myapp/templates/admindashbord.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myapp/templates/adddevice.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myapp/templates/demo.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myapp/urls.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myapp/views.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myapp/templates/login.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myapp/templates/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myapp/models.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myapp/admin.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myapp/templates/adminUserList.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="285xyzXfdGduCgclAnP8evPpwz7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../society_system_application-main" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,5 +118,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

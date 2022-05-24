@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'notification_service.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'notificationdb',
+        'NAME': 'notify_databse',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
