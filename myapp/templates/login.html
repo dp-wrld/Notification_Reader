@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <style>
+        body{
+            background-color: Gray;
+        }
         .container {
             height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: #E6E6FA;
         }
         .buttons{
             text-align: center;
+
         }
         .content {
             width: 350px;
+
         }
 
         .add-form {
@@ -27,6 +33,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
         }
 
 
@@ -34,6 +41,7 @@
             display: none;
             position: absolute;
             z-index: 999;
+
         }
 
         .baseDiv {
@@ -44,12 +52,14 @@
         .myDIV:hover+.hide {
             position: relative;
             display: block;
+
         }
 
         .myDIV:hover+.hide+.baseDiv {
             display: none;
             position: absolute;
             z-index: 999;
+
         }
     </style>
     <title>Notification</title>
@@ -85,6 +95,7 @@
         </div>
     </div>
     <div class="buttons">
+        <br>
         <button class="btn btn-primary">
             <a style="color: white;"
                 href="https://drive.google.com/file/d/1wwe6RswhzVAUuaajR8uIglw3vsPYeFvA/view?usp=sharing">
