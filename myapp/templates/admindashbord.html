@@ -42,17 +42,21 @@
                                 width="100%">
                                 <hr>
                                 <thead>
-                                    <th scope="col">User Name</th>
+                                    <th scope="col">phone</th>
                                     <th scope="col">Android id</th>
                                     <th scope="col">Number Of Notifications</th>
                                 </thead>
                                 <tbody>
-                                    {% for r in users %}
-                                    <tr>
-                                        <td>{{r.username}}</td>
-                                        <td>{{r.androidid}}</td>
-                                        <td>{{r.ncount}}</td>
-                                    </tr>
+                                    {% for phone,phonedata in form.items %}
+
+                                        {% for notifcount,id in phonedata %}
+                                        <tr>
+                                            <td>{{phone}}</td>
+                                            <td>{{id}}</td>
+                                            <td>{{notifcount}}</td>
+                                        </tr>
+                                        {% endfor %}
+
                                     {% endfor %}
                             </table>
                         </div>

@@ -28,6 +28,7 @@ class Device(models.Model):
     # id = models.IntegerField(primary_key=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
     androidid = models.CharField(max_length=40, blank=True, unique=True)
+    numOfNotif = models.IntegerField(default=0)
 
 
     def __str__(self) -> str:

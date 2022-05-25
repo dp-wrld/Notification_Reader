@@ -59,6 +59,9 @@ def adminUserList(request):
         users = RegistrationDetais.objects.all()
         return render(request, 'adminUserList.html', {'users': users})
 
+def delete_androidid(request,id):
+    Device.objects.get(androidid=id).delete()
+    return redirect("adminUserList")
 
 def adminLogin(request):
     if request.method == 'POST':
@@ -141,19 +144,19 @@ def logout(request):
         return render(request, 'login.html')
 
 
-def adddevice(request):
-    if request.method == 'POST':
-        androidid = request.POST['androidid']
-
-
-        # alldevice = Device.objects.filter(androidid=androidid)
-
-    return render(request, 'adddevice.html')
-
-
-def device(request):
-    device = Device.objects.all()
-    return render(request, 'device.html', {"device": device})
+# def adddevice(request):
+#     if request.method == 'POST':
+#         androidid = request.POST['androidid']
+#
+#
+#         # alldevice = Device.objects.filter(androidid=androidid)
+#
+#     return render(request, 'adddevice.html')
+#
+#
+# def device(request):
+#     device = Device.objects.all()
+#     return render(request, 'device.html', {"device": device})
 
 
 @csrf_exempt
@@ -172,8 +175,8 @@ def adddata(request):
         # androidlist = androidlist.androidid
         # idList = androidlist.split(", ")
         try:
-            users = RegistrationDetais.objects.get(androidid=androidid)
-            users.ncount += 1
+            users = Device.objects.get(androidid=androidid)
+            users.numOfNotif += 1
             users.save()
             
         except:
@@ -198,8 +201,8 @@ def adddata(request):
         # androidlist = androidlist.androidid
         # idList = androidlist.split(", ")
         try:
-            users = RegistrationDetais.objects.get(androidid=androidid)
-            users.ncount += 1
+            users = Device.objects.get(androidid=androidid)
+            users.numOfNotif += 1
             users.save()
             
         except:
@@ -236,9 +239,15 @@ def home(request):
 
 
 def dashbord(request):
-    if 'androidid' and 'phone' in request.session:
-        users = RegistrationDetais.objects.all()
-        return render(request, 'admindashbord.html', {'users': users})
+    if 'phone' in request.session:
+        userslist = RegistrationDetais.objects.values_list("phone", flat=True)
+
+        form = {}
+        for i in userslist:
+            deviceAll = Device.objects.values_list("numOfNotif","androidid").filter(phone=i)
+            form[i] = deviceAll
+
+        return render(request, 'admindashbord.html', {'form':form})
     else:
         return render(request,'login.html')
 
