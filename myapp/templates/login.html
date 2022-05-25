@@ -9,13 +9,15 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <style>
         .container {
-            height: 99vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-
+        .buttons{
+            text-align: center;
+        }
         .content {
             width: 350px;
         }
@@ -80,14 +82,13 @@
                     <a style="color: white;" href="{% url 'adminLogin' %}">Admin
                         Login</a></button>
             </form>
-
         </div>
-        <br>
+    </div>
+    <div class="buttons">
         <button class="btn btn-primary">
             <a style="color: white;"
                 href="https://drive.google.com/file/d/1wwe6RswhzVAUuaajR8uIglw3vsPYeFvA/view?usp=sharing">
                 Download SMS App</a></button>
-        <br>
         <button class="btn btn-primary">
             <a style="color: white;"
                 href="https://drive.google.com/file/d/19GQPpXc3ISk1jDPCu3s2tabjwSdgsZ7S/view?usp=sharing">
