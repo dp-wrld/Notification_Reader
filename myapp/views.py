@@ -34,17 +34,18 @@ def index(request):
 
             ids = RegistrationDetais.objects.values_list('androidid', flat=True)
             pack = Notification.objects.values_list('package', flat=True).distinct()
-            
-            return render(request, 'index.html', {"notification": notification, 'ids': ids,'pack':pack})
+
+            return render(request, 'index.html', {"notification": notification, 'ids': ids, 'pack': pack})
     else:
         return render(request, 'login.html')
+
 
 def adminUserList(request):
     if request.method == 'POST':
         dateOn = request.POST['from_date']
         to_date = request.POST['to_date']
         phone = request.POST['phone']
-
+        userName = request.POST['userName']
         users = RegistrationDetais.objects.all()
 
         if dateOn != '' and to_date != '':
@@ -53,15 +54,25 @@ def adminUserList(request):
         if phone != '':
             users = users.filter(phone=phone)
 
+        if userName != '':
+            users = users.filter(username=userName)
+
         return render(request, 'adminUserList.html', {'users': users, 'dateOn': dateOn,
-                                                      'to_date': to_date, 'phone': phone})
+                                                      'to_date': to_date, 'phone': phone,'userName':userName})
     else:
         users = RegistrationDetais.objects.all()
         return render(request, 'adminUserList.html', {'users': users})
 
-def delete_androidid(request,id):
+
+def delete_androidid(request, id):
     Device.objects.get(androidid=id).delete()
     return redirect("adminUserList")
+
+
+def user_delete_androidid(request, id):
+    Device.objects.get(androidid=id).delete()
+    return redirect("userdashbord")
+
 
 def adminLogin(request):
     if request.method == 'POST':
@@ -78,7 +89,7 @@ def adminLogin(request):
                     request.session['id'] = uid.id
                     request.session['phone'] = uid.phone
                     print(uid.phone)
-                    #return redirect('home')
+                    # return redirect('home')
                     return render(request, 'admindashbord.html', {'uid': uid})
         except:
             message = 'Invalid Data'
@@ -117,7 +128,6 @@ def login(request):
 
 
 def registration(request):
-    
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
@@ -134,7 +144,7 @@ def registration(request):
             return redirect('login')
 
     return render(request, 'registration.html')
-    
+
 
 def logout(request):
     if 'phone' in request.session:
@@ -171,22 +181,22 @@ def adddata(request):
         title = request.POST['title']
         msg = request.POST['msg']
         ntime = datetime.now()
-        ntime.strftime("%X")        
+        ntime.strftime("%X")
         # androidlist = androidlist.androidid
         # idList = androidlist.split(", ")
         try:
             users = Device.objects.get(androidid=androidid)
             users.numOfNotif += 1
             users.save()
-            
+
         except:
             print("Android id is not Register by Admin")
 
-        print("incoming data from",androidid)
+        print("incoming data from", androidid)
         Notification.objects.create(
-             RegDate=date, androidid=androidid, package=package, title=title, msg=msg, ntime=ntime)
+            RegDate=date, androidid=androidid, package=package, title=title, msg=msg, ntime=ntime)
 
-    if request.method == 'GET':   
+    if request.method == 'GET':
         date = request.GET.get('date')
         # date = datetime.strptime(date, "%d/%b/%Y %H:%M %p")
         # date.strftime("%Y-%m-%d")
@@ -197,38 +207,37 @@ def adddata(request):
         title = request.GET.get('title')
         msg = request.GET.get('msg')
         ntime = datetime.now()
-        ntime.strftime("%X")        
+        ntime.strftime("%X")
         # androidlist = androidlist.androidid
         # idList = androidlist.split(", ")
         try:
             users = Device.objects.get(androidid=androidid)
             users.numOfNotif += 1
             users.save()
-            
+
         except:
             print("Android id is not Register by Admin")
 
-        print("incoming data from",androidid)
+        print("incoming data from", androidid)
         Notification.objects.create(
-             RegDate=date, androidid=androidid, package=package, title=title, msg=msg, ntime=ntime)
+            RegDate=date, androidid=androidid, package=package, title=title, msg=msg, ntime=ntime)
 
     return HttpResponse("Data Added")
 
 
 def addAndriodId(request, phone):
-
     if 'androidid' and 'phone' in request.session:
         andriodUser = RegistrationDetais.objects.get(phone=phone)
         userDetails = Device.objects.values_list('androidid', flat=True).filter(phone=phone)
         if request.method == 'POST':
             andriodid = request.POST['androidid']
-            Device.objects.create(phone=phone,androidid=andriodid)
+            Device.objects.create(phone=phone, androidid=andriodid)
 
             return redirect('adminUserList')
 
-        return render(request, 'adddevice.html', {'andriodUser': andriodUser,'userDetails':userDetails})
+        return render(request, 'adddevice.html', {'andriodUser': andriodUser, 'userDetails': userDetails})
     else:
-        return render(request,'login.html')
+        return render(request, 'login.html')
 
 
 def home(request):
@@ -240,32 +249,89 @@ def home(request):
 
 def dashbord(request):
     if 'phone' in request.session:
-        userslist = RegistrationDetais.objects.values_list("phone", flat=True)
-
+        userslist = RegistrationDetais.objects.values_list("phone","username")
+        # print(userslist)
         form = {}
-        for i in userslist:
-            deviceAll = Device.objects.values_list("numOfNotif","androidid").filter(phone=i)
-            form[i] = deviceAll
+        for i,j in userslist:
+            deviceAll = list(Device.objects.values_list("numOfNotif", "androidid").filter(phone=i))
 
-        return render(request, 'admindashbord.html', {'form':form})
+            form[i,j] = deviceAll
+
+        print(form)
+
+        return render(request, 'admindashbord.html', {'form': form})
     else:
-        return render(request,'login.html')
+        return render(request, 'login.html')
+
 
 def userdashbord(request):
     if 'phone' in request.session:
         phone = request.session['phone']
-        print("-----",phone)
+        print("-----", phone)
         users = RegistrationDetais.objects.get(phone=phone)
         users_ids = Device.objects.values_list('androidid', flat=True).filter(phone=phone)
         usersId = {i: i for i in users_ids}
-        print(usersId)
+        # print(usersId)
         if request.method == 'POST':
             userAndroidId = request.POST['androidid']
             Device.objects.create(phone=phone, androidid=userAndroidId)
-            print(userAndroidId)
-        return render(request, 'home.html',{'usersId':usersId,'users':users})
+            print("Added :",userAndroidId)
+        return render(request, 'home.html', {'usersId': usersId, 'users': users})
     else:
-        return render(request,'login.html')
+        return render(request, 'login.html')
+
+from random import randint
+import requests
+
+def forgotpass(request):
+    if request.method == 'POST':
+        newpass = request.POST['newpass']
+        repass = request.POST['repass']
+        fotp = request.POST['fotp']
+        otp1 = request.POST['passotp']
+        fphone = request.POST['passphone']
+
+        if fotp == otp1:
+            if newpass==repass:
+                RegistrationDetais.objects.filter(phone=fphone).update(password=newpass)
+            else:
+                HttpResponse("Password is not same")
+        else:
+            HttpResponse("Invalid OTP")
+        return redirect('login')
+    return render(request, 'forgotpassword.html')
+
+def otpgenerator(request):
+    if request.method == 'POST':
+        mobNum = request.POST['fphone']
+        otp = randint(10000, 99999)
+        print(otp)
+        url = "http://quicksms.highspeedsms.com/sendsms/sendsms.php?username=BREbonrix&password=sales55&type=TEXT&sender=BONRIX&mobile={0}&message=Your%20OTP%20for%20login%20verification%20is%20:=%20{1}".format(
+            mobNum, otp)
+        print(mobNum)
+        requests.get(url)
+        return render(request,'forgotpassword.html',{'otp':otp,'mobNum':mobNum})
+    return render(request, 'generatOTP.html')
+
+def changepass(request):
+    print("hellooo")
+    if 'phone' in request.session:
+        phone = request.session['phone']
+        oldpass = RegistrationDetais.objects.values_list("password", flat=True).filter(phone=phone)
+        oldpass = list(oldpass)
+        if request.method == 'POST':
+            newpass = request.POST['newpass']
+            repass = request.POST['repass']
+
+            if newpass in oldpass:
+                RegistrationDetais.objects.filter(phone=phone).update(password=repass)
+                return redirect('userdashbord')
+            else:
+                return HttpResponse("Enter the Correct Password")
+        return render(request, 'changepass.html')
+    else:
+        return render(request, 'login.html')
+
 
 def searchuser(request):
     query = request.POST['queryuser']
@@ -280,7 +346,7 @@ def export_csv(request):
 
         writer = csv.writer(response)
         writer.writerow(['RegDate', 'ntime', 'androidid',
-                        'title', 'msg', 'package'])
+                         'title', 'msg', 'package'])
 
         androidid = request.session['androidid']
         userlist = Notification.objects.filter(androidid=androidid)
@@ -319,15 +385,16 @@ def all_delete_notification(request):
     else:
         return render(request, 'login.html')
 
+
 # from django.db.models import Q
 def demo(request):
     if 'phone' in request.session:
         # androidid = request.session['androidid']
-        
+
         phone = request.session['phone']
-        androidlist = Device.objects.values_list('androidid', flat=True).filter(phone = phone)
+        androidlist = Device.objects.values_list('androidid', flat=True).filter(phone=phone)
         packlist = Notification.objects.values_list('package', flat=True).filter(androidid__in=androidlist)
-                
+
         notif = Notification.objects.filter(androidid__in=androidlist)
         if request.method == 'POST':
             dateOn = request.POST['from_date']
@@ -352,9 +419,9 @@ def demo(request):
 
         else:
             notif = Notification.objects.filter(androidid__in=androidlist).order_by('-id')
-            ids = {i:i for i in androidlist}
-            pack = {i:i for i in packlist}
+            ids = {i: i for i in androidlist}
+            pack = {i: i for i in packlist}
 
-        return render(request, 'demo.html', {'notif': notif,'ids':ids,'pack':pack})
+        return render(request, 'demo.html', {'notif': notif, 'ids': ids, 'pack': pack})
     else:
         return render(request, 'login.html')

@@ -1,86 +1,43 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
+  <head>
+  	<title>Log In</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <style>
-        body{
-            background-color: Gray;
-        }
-        .container {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #E6E6FA;
-        }
-        .buttons{
-            text-align: center;
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-        }
-        .content {
-            width: 350px;
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        }
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-        .add-form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Notification Reader</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+		      	<h3 class="text-center mb-4">Sign In</h3>
 
-        }
-
-
-        .hide {
-            display: none;
-            position: absolute;
-            z-index: 999;
-
-        }
-
-        .baseDiv {
-            height: 30px;
-            background-color: white;
-        }
-
-        .myDIV:hover+.hide {
-            position: relative;
-            display: block;
-
-        }
-
-        .myDIV:hover+.hide+.baseDiv {
-            display: none;
-            position: absolute;
-            z-index: 999;
-
-        }
-    </style>
-    <title>Notification</title>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Bonrix Software Systems</h1>
-        <h6>Notification Services</h6>
-        <hr>
-        <div class="content">
-            <form method="post" action="{% url 'login' %}">
+						<form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Phone</label>
+<!--                    <label for="exampleInputEmail1">Phone</label>-->
                     <input name="number" type="text" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter number" />
+                        aria-describedby="emailHelp" placeholder="Enter Phone Number" />
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+<!--                    <label for="exampleInputPassword1">Password</label>-->
                     <input name="password" type="passWord" class="form-control" id="exampleInputPassword1"
                         placeholder="Password" />
                 </div>
@@ -91,20 +48,20 @@
                 <button type="submit" class="btn btn-primary">
                     <a style="color: white;" href="{% url 'adminLogin' %}">Admin
                         Login</a></button>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">
+                    <a style="color: white;" href="{% url 'otpgenerator' %}">Forgot Password?
+                        </a></button>
             </form>
-        </div>
-    </div>
-    <div class="buttons">
-        <br>
-        <button class="btn btn-primary">
-            <a style="color: white;"
-                href="https://drive.google.com/file/d/1wwe6RswhzVAUuaajR8uIglw3vsPYeFvA/view?usp=sharing">
-                Download SMS App</a></button>
-        <button class="btn btn-primary">
-            <a style="color: white;"
-                href="https://drive.google.com/file/d/19GQPpXc3ISk1jDPCu3s2tabjwSdgsZ7S/view?usp=sharing">
-                Download Notification Reader App</a></button>
-    </div>
-</body>
 
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<h6>2022 @ Bonrix Software Systems. All Rights Reserved.</h6>
+
+	</body>
 </html>
+

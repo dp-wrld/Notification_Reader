@@ -1,83 +1,46 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
+  <head>
+  	<title>Log In</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <style>
-        .container {
-            height: 99vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-        .content {
-            width: 350px;
-        }
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .add-form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+                    <h4 class="text-center mb-4">Notification Services</h4>
+					<div class="login-wrap p-4 p-md-5">
+		      	        <h3 class="text-center mb-4">Register here...</h3>
 
-        .hide {
-            display: none;
-            position: absolute;
-            z-index: 999;
-        }
-
-        .baseDiv {
-            height: 30px;
-            background-color: white;
-        }
-
-        .myDIV:hover+.hide {
-            position: relative;
-            display: block;
-        }
-
-        .myDIV:hover+.hide+.baseDiv {
-            display: none;
-            position: absolute;
-            z-index: 999;
-        }
-    </style>
-    <title>Notification</title>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Bonrix Systems</h1>
-        <h6>Notification Services</h6>
-        <hr>
-        <div class="content">
+            <hr>
             <form method="post" action="{% url 'registration' %}">
                 {% csrf_token %}
                 <div class="form-check">
                     <div class="form-group">
                         <label for="exampleInputEmail1">UserName</label>
-                        <input name="username" type="text" class="form-control" id="username"
-                            aria-describedby="emailHelp" placeholder="Enter UserName" />
+                        <input name="username" type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                            placeholder="Enter UserName" />
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input name="email" type="text" class="form-control" id="email"
-                            aria-describedby="emailHelp" placeholder="Enter Email d" />
+                        <input name="email" type="text" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter Email id" />
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Phone</label>
-                        <input name="number" type="text" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Enter number" />
+                        <input name="number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter number" />
                     </div>
 
                     <div class="form-group">
@@ -94,11 +57,14 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <button type="submit" class="btn btn-primary"><a style="color: white;" href="{% url 'login' %}">Already
-                    Exists? Login</a></button>
+<button type="submit" class="btn btn-primary"><a style="color: white;" href="{% url 'login' %}">Already
+        Exists? Login</a></button>
 
-        </div>
-    </div>
-</body>
-
+	                </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
 </html>
+

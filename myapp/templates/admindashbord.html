@@ -43,15 +43,16 @@
                                 <hr>
                                 <thead>
                                     <th scope="col">phone</th>
+                                    <th scope="col">User</th>
                                     <th scope="col">Android id</th>
                                     <th scope="col">Number Of Notifications</th>
                                 </thead>
                                 <tbody>
                                     {% for phone,phonedata in form.items %}
-
                                         {% for notifcount,id in phonedata %}
                                         <tr>
-                                            <td>{{phone}}</td>
+                                            <td>{{phone.0}}</td>
+                                            <td>{{phone.1}}</td>
                                             <td>{{id}}</td>
                                             <td>{{notifcount}}</td>
                                         </tr>
