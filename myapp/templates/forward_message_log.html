@@ -1,0 +1,116 @@
+{% extends 'bash.html' %}
+{% load static %}
+{% block content %}
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<style>
+    .home-content .sales-boxes .recent-sales {
+        width: 100%;
+        background: #fff;
+        padding: 20px 30px;
+        margin: 0 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Forward Message History Log</span>
+        </div>
+        <div class="profile-details">
+
+            <i class="fa fa-user" aria-hidden="true" style="margin-left:40px;"></i>
+            <form action="{% url 'logout' %}" method="post" id="my_form">
+                {% csrf_token %}
+                <button type="submit"></button>
+                <a href="javascript:{}" onclick="document.getElementById('my_form').submit();"
+                    style="margin-left:10px; text-decoration:none;"> Logout </a>
+            </form>
+
+        </div>
+    </nav>
+
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="sales-details">
+
+                    <form method="post" style="width: 100%;" id="example">
+                        {% csrf_token %}
+                        <span><b>From</b></span><input type="date" placeholder="from"
+                                    style="margin:0 0 10px 10px; width:150px" name="from_date" {% if dateOn %}
+                                    value="{{ dateOn }}" {% endif %}>
+                                &nbsp &nbsp<span><b>To</b></span><input type="date"
+                                    style="margin:0 0 10px 10px; width:150px" name="to_date" {% if to_date %}
+                                    value="{{ to_date }}" {% endif %}>
+                        <input class="btn btn-primary" type="submit"
+                                    style="border:2px solid black;margin:0 0 0 10px;padding:8px 25px">
+                        <div class="table-responsive">
+                        <table id="bootstrapdatatable" style="width:100%" class="table table-striped table-bordered"
+                               width="100%">
+                        <thead>
+                        <th scope="col">Date</th>
+                        <th scope="col">Android Id</th>
+                        <th scope="col">Package</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Status</th>
+                        </thead>
+                        <tbody id="tbody">
+                            {% for log in msg_log%}
+                            <tr id="{{id}}">
+<!--                            <td><input type="checkbox" name="{{id}}" id=""></td>-->
+                            <td>{{log.fdate}} &nbsp;&nbsp;{{log.ftime}}</td>
+                            <td>{{log.androidid}}</td>
+                            <td>{{log.package}}</td>
+                            <td>{{log.title}}</td>
+                            <td>{{log.msg}}</td>
+                            <td>{{log.forwardURL}}</td>
+                            <td>{{log.status}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                        </table>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+    $('#apl-btn').on('click', function () {
+                var selected = {};
+                $('#example tbody tr').each(function (i) {
+                    var t = $(this).children("td").children("input");
+                    var s = $(this).children("td").children("select");
+                    var p = $(this).children("td").children("span");
+                    if (t.is(":checked")) {
+                    console.log(s.val());
+                    selected[p.text()] = [p.text(), s.val(), t[1].value]
+
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "http://127.0.0.1:8000/get_url",
+                    data: JSON.stringify(selected),
+                    crossDomain: true,
+                    success: function (result) {
+                        alert(result);
+
+                    },
+                })
+
+        });
+
+</script>
+</section>
+
+{% endblock %}

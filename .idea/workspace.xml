@@ -2,22 +2,152 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac8a512-1793-4c14-be15-16c97f94619f" name="Changes" comment="loginpagecolour">
-      <change afterPath="$PROJECT_DIR$/myapp/migrations/0005_device_username.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/migrations/0006_remove_device_username.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/changepass.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/forgotpassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/generatOTP.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/Image/SMS.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/Image/insta.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/Image/linkedin-brands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/Image/whatsapp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/nav_sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/fonts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/nav_sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/Static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/migrations/0015_forwardhistorylog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/LiveMessages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/forward_dash.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/forward_message_log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/load-live.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/notification_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/notification_service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/adminUserList.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adminUserList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/admindashbord.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/admindashbord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/adminlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/adminlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/bash.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/bash.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/searchnotification.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/Static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/searchuser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/userbash.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/userbash.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification_service/settings.py" afterDir="false" />
@@ -66,7 +196,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/iamda/Desktop/google_auth&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/iamda/Desktop/notification_service&quot;
   }
 }</component>
   <component name="RunManager">

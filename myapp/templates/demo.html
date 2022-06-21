@@ -19,13 +19,7 @@
             <i class='bx bx-menu sidebarBtn'></i>
             <span class="dashboard">NOTIFICATIONS</span>
         </div>
-        <form method="post" action="/searchuser/">
-            {% csrf_token %}
-            <div class="search-box">
-                <input type="text" placeholder="Search..." name="queryuser" id="queryuser">
-                <i class='bx bx-search'></i>
-            </div>
-        </form>
+
         <div class="profile-details">
             <i class="fa fa-user" aria-hidden="true" style="margin-left:40px;"></i>
             <form action="{% url 'logout' %}" method="post" id="my_form">
